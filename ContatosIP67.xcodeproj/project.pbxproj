@@ -13,6 +13,7 @@
 		850DB05620EA5F8F000CAB32 /* ContatosIP67.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 850DB05420EA5F8F000CAB32 /* ContatosIP67.xcdatamodeld */; };
 		850DB05820EA5F8F000CAB32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850DB05720EA5F8F000CAB32 /* Assets.xcassets */; };
 		850DB05B20EA5F8F000CAB32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850DB05920EA5F8F000CAB32 /* LaunchScreen.storyboard */; };
+		851738D120EA980300D141E1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851738D020EA980300D141E1 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		850DB05720EA5F8F000CAB32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		850DB05A20EA5F8F000CAB32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		850DB05C20EA5F8F000CAB32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		851738D020EA980300D141E1 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				850DB04D20EA5F8F000CAB32 /* AppDelegate.swift */,
 				850DB04F20EA5F8F000CAB32 /* ViewController.swift */,
+				851738D020EA980300D141E1 /* Contact.swift */,
 				850DB05120EA5F8F000CAB32 /* Main.storyboard */,
 				850DB05720EA5F8F000CAB32 /* Assets.xcassets */,
 				850DB05920EA5F8F000CAB32 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851738D120EA980300D141E1 /* Contact.swift in Sources */,
 				850DB05020EA5F8F000CAB32 /* ViewController.swift in Sources */,
 				850DB05620EA5F8F000CAB32 /* ContatosIP67.xcdatamodeld in Sources */,
 				850DB04E20EA5F8F000CAB32 /* AppDelegate.swift in Sources */,
@@ -303,6 +307,7 @@
 				850DB06120EA5F8F000CAB32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

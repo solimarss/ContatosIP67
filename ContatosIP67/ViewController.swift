@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    
-    @IBOutlet weak var nome: UITextField!
+    @IBOutlet weak var txtNome: UITextField!
+    @IBOutlet weak var txtFone: UITextField!
+    @IBOutlet weak var txtEndereco: UITextField!
+    @IBOutlet weak var txtSite: UITextField!
     
 
     override func viewDidLoad() {
@@ -27,8 +29,14 @@ class ViewController: UIViewController {
 
 
     @IBAction func salvar(_ sender: UIButton) {
-        let nome = self.nome.text!
-        print(nome)
+        let contact = Contact()
+        
+        contact.name = txtNome.text!
+        contact.phone = txtFone.text!
+        contact.address = txtEndereco.text!
+        contact.site = txtSite.text!
+        print(contact)
+        
     }
     
 }
