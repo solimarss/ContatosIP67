@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtEndereco: UITextField!
     @IBOutlet weak var txtSite: UITextField!
     
-    let dao = ContactDAO()
-    
+   let dao = ContactDAO.shared    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,8 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func salvar(_ sender: UIButton) {
+    @IBAction func saveNewContact(_ sender: UIBarButtonItem) {
+        
         let contact = Contact()
         
         contact.name = txtNome.text!
@@ -41,8 +41,11 @@ class ViewController: UIViewController {
         
         dao.add(newContact: contact)
         
+        _ = navigationController?.popViewController(animated: true)// _ = ignora o retorno
         
     }
+    
+    
     
 }
 

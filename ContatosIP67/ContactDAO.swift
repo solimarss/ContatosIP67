@@ -11,14 +11,31 @@ import UIKit
 class ContactDAO: NSObject {
 
     private var contacts: [Contact]//Isso e um Array
+    static let shared = ContactDAO()
     
-    override init() {
+    //private static var instance: ContactDAO!
+    
+    //static func sharedInstance() -> ContactDAO {
+      //  if instance == nil {
+        //    instance = ContactDAO()
+        //}
+    //}
+    
+    private override init() {
         contacts = Array()
     }
     
     func add(newContact contact: Contact) {
         contacts.append(contact)
         print(contacts)
+    }
+    
+    func size() -> Int {
+        return contacts.count
+    }
+    
+    func findBy(position: Int) -> Contact {
+        return contacts[position]
     }
     
 }
