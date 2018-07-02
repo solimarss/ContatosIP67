@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var nome: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +26,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func salvar(_ sender: UIButton) {
+        let nome = self.nome.text!
+        print(nome)
+    }
+    
 }
 
