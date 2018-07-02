@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtEndereco: UITextField!
     @IBOutlet weak var txtSite: UITextField!
     
+    let dao = ContactDAO()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,9 @@ class ViewController: UIViewController {
         contact.address = txtEndereco.text!
         contact.site = txtSite.text!
         print(contact)
+        
+        dao.add(newContact: contact)
+        
         
     }
     
