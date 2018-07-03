@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nOV-db-cB7" id="ubA-zw-csZ">
-                                            <frame key="frameInset" width="320" height="43.5"/>
+                                            <frame key="frameInset" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -44,12 +44,13 @@
                     <navigationItem key="navigationItem" title="Contatos" id="lwS-GM-Iwk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bnm-lG-pRC">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="RBV-RS-gsk"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="toInsert" id="RBV-RS-gsk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="WcB-Nn-SZj" id="MWW-3K-CDp"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toUpdate" id="Rp2-d7-wTn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn5-5a-cVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,4 +160,7 @@
             <point key="canvasLocation" x="-716.25" y="142.6056338028169"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rp2-d7-wTn"/>
+    </inferredMetricsTieBreakers>
 </document>

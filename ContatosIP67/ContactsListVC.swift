@@ -13,15 +13,35 @@ class ContactsListVC: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     let dao = ContactDAO.shared
+    var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        
+        //Exemplo de i18n
+        let save = NSLocalizedString("save", comment: "comentario")
+        print(save)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let indexPath = selectedIndexPath {
+            tableview.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+            
+            //executa esse codigo apos 2 segundos na thred principal
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                self.tableview.deselectRow(at: indexPath, animated: true)
+                self.selectedIndexPath = nil
+            })
+            
+            
+        }
     }
     
 }
@@ -48,8 +68,22 @@ extension ContactsListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            dao.remove(byId: indexPath.row)
-            tableview.deleteRows(at: [indexPath], with: .fade)
+            
+            let alert = UIAlertController(title: "Cuidado", message: "Deseja relamente excluir?", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+            
+            let removeAction = UIAlertAction(title: "Remove", style: .destructive, handler: { (action) in
+                self.dao.remove(byId: indexPath.row)
+                self.tableview.deleteRows(at: [indexPath], with: .fade)
+            })
+            
+            alert.addAction(cancelAction)
+            alert.addAction(removeAction)
+            
+            present(alert, animated: true, completion: nil)
+            
+           
         }
         
     }
@@ -62,10 +96,59 @@ extension ContactsListVC: UITableViewDelegate {
         let contact = dao.findBy(position: indexPath.row)
         print(contact)
         
+        performSegue(withIdentifier: "toUpdate", sender: contact)
+        /**
+ 
         if let form = storyboard?.instantiateViewController(withIdentifier: "cadastro_id")  as? ViewController   {
             form.contact = contact
            navigationController?.pushViewController(form, animated: true)
         }
+       **/
     }
     
 }
+
+extension ContactsListVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+         let form = segue.destination as? ViewController
+                 form?.delegate = self
+        
+        if segue.identifier == "toUpdate"
+        {
+         
+          let contact = sender as? Contact
+          form?.contact = contact
+
+            
+        }
+        
+        if segue.identifier == "toInsert"
+        {
+           print("toInsert")
+            
+        }
+    }
+    
+   
+}
+
+extension ContactsListVC: CreateOrUpdateContactDelegate{
+    func created(contact: Contact) {
+        if let row = dao.getPosition(by: contact){
+            selectedIndexPath = IndexPath(row: row, section: 0)
+            
+        }
+        
+    }
+    
+    func updated(contact: Contact) {
+        
+        if let row = dao.getPosition(by: contact){
+            selectedIndexPath = IndexPath(row: row, section: 0)
+            
+        }
+    }
+}
+
+

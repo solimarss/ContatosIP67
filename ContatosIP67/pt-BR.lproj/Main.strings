@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Nome:"; ObjectID = "13l-O0-6MP"; */
+"13l-O0-6MP.text" = "Nome:";
+
+/* Class = "UITextField"; placeholder = "Fulano de Tal"; ObjectID = "1du-Ys-dS9"; */
+"1du-Ys-dS9.placeholder" = "Fulano de Tal";
+
+/* Class = "UILabel"; text = "Endereco:"; ObjectID = "D4D-79-5h1"; */
+"D4D-79-5h1.text" = "Endereco:";
+
+/* Class = "UINavigationItem"; title = "Cadastro"; ObjectID = "HI1-QE-h6A"; */
+"HI1-QE-h6A.title" = "Cadastro";
+
+/* Class = "UILabel"; text = "Telefone:"; ObjectID = "VV8-1w-gXS"; */
+"VV8-1w-gXS.text" = "Telefone:";
+
+/* Class = "UILabel"; text = "Site:"; ObjectID = "fc5-Wl-ubX"; */
+"fc5-Wl-ubX.text" = "Site:";
+
+/* Class = "UINavigationItem"; title = "Contatos"; ObjectID = "lwS-GM-Iwk"; */
+"lwS-GM-Iwk.title" = "Contatos";
+
+/* Class = "UITextField"; placeholder = "(00)0000000"; ObjectID = "wn0-3D-Jdn"; */
+"wn0-3D-Jdn.placeholder" = "(00)0000000";

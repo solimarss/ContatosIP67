@@ -42,6 +42,10 @@ class ContactDAO: NSObject {
         contacts.remove(at: id)
     }
     
+    func getPosition(by contact: Contact) -> Int? {
+       return contacts.index(where: {other in return other.name == contact.name })
+    }
+    
 }
 
 

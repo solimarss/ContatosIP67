@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtSite: UITextField!
     
     var contact: Contact?
+    var delegate: CreateOrUpdateContactDelegate?
     
     let dao = ContactDAO.shared
     var isNew = true
@@ -56,6 +57,9 @@ class ViewController: UIViewController {
         
         if isNew {
             dao.add(newContact: contact!)
+            delegate?.created(contact: contact!)
+        }else{
+            delegate?.updated(contact: contact!)
         }
         _ = navigationController?.popViewController(animated: true)// _ = ignora o retorno
         
