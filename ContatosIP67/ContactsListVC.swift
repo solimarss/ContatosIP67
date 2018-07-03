@@ -23,7 +23,6 @@ class ContactsListVC: UIViewController {
         tableview.reloadData()
     }
 
-
 }
 
 extension ContactsListVC: UITableViewDataSource {
