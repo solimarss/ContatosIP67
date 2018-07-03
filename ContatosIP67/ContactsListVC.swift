@@ -17,12 +17,13 @@ class ContactsListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
+        tableview.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableview.reloadData()
     }
-
+    
 }
 
 extension ContactsListVC: UITableViewDataSource {
@@ -40,5 +41,31 @@ extension ContactsListVC: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            dao.remove(byId: indexPath.row)
+            tableview.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+    }
+    
+}
+
+extension ContactsListVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contact = dao.findBy(position: indexPath.row)
+        print(contact)
+        
+        if let form = storyboard?.instantiateViewController(withIdentifier: "cadastro_id")  as? ViewController   {
+            form.contact = contact
+           navigationController?.pushViewController(form, animated: true)
+        }
+    }
     
 }

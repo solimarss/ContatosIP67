@@ -38,6 +38,10 @@ class ContactDAO: NSObject {
         return contacts[position]
     }
     
+    func remove(byId id: Int) {
+        contacts.remove(at: id)
+    }
+    
 }
 
 

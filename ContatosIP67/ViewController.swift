@@ -16,12 +16,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtEndereco: UITextField!
     @IBOutlet weak var txtSite: UITextField!
     
-   let dao = ContactDAO.shared    
+    var contact: Contact?
+    
+    let dao = ContactDAO.shared
+    var isNew = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let contact = self.contact {
+            fillForm(with: contact)
+            isNew = false
+        }else{
+            contact = Contact()
+        }
     }
+    
+    private func fillForm(with contact: Contact){
+        txtNome.text = contact.name
+        txtEndereco.text = contact.address
+        txtSite.text = contact.site
+        txtFone.text = contact.phone
+    }
+    
+    private func fillContact(){
+        contact?.name = txtNome.text!
+        contact?.phone = txtFone.text!
+        contact?.address = txtEndereco.text!
+        contact?.site = txtSite.text!    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,18 +50,13 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func saveNewContact(_ sender: UIBarButtonItem) {
+    @IBAction func saveContact(_ sender: UIBarButtonItem) {
         
-        let contact = Contact()
+        fillContact()
         
-        contact.name = txtNome.text!
-        contact.phone = txtFone.text!
-        contact.address = txtEndereco.text!
-        contact.site = txtSite.text!
-        print(contact)
-        
-        dao.add(newContact: contact)
-        
+        if isNew {
+            dao.add(newContact: contact!)
+        }
         _ = navigationController?.popViewController(animated: true)// _ = ignora o retorno
         
     }
