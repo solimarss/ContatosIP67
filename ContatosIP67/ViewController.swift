@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtFone: UITextField!
     @IBOutlet weak var txtEndereco: UITextField!
     @IBOutlet weak var txtSite: UITextField!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var contact: Contact?
     var delegate: CreateOrUpdateContactDelegate?
@@ -68,8 +70,13 @@ class ViewController: UIViewController {
     //acao para o "Tap Gesture Recognizer" que foi colocado graficamente em cima do UIImageView
     @IBAction func choosePhoto(_ sender: UITapGestureRecognizer) {
         
+        activityIndicator.startAnimating()
+        //para imperdir que seja clicado mais de uma vez
+        photoImageView.isUserInteractionEnabled = false
+        
         let imageController = UIImagePickerController()
         imageController.allowsEditing = true
+        imageController.delegate = self
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             
@@ -77,9 +84,42 @@ class ViewController: UIViewController {
             imageController.sourceType = .photoLibrary
         }
     
+        
         present(imageController, animated: true, completion: nil)
     }
     
+}
+
+extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        
+        //executa somente antes do return ou finalizacao do metodo. ou seja executa sempre antas de finalizar o metodo
+        defer {
+            stopImageLoader()
+            //fecha o app de fotos
+            picker.dismiss(animated: true, completion: nil)
+        }
+        
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            return
+        }
+        
+        photoImageView.image = image
+        
+        
+        
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        stopImageLoader()
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate func stopImageLoader(){
+        activityIndicator.stopAnimating()
+        photoImageView.isUserInteractionEnabled = true
+
+    }
 }
 

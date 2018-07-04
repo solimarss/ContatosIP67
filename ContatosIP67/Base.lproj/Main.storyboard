@@ -71,6 +71,7 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJ4-ze-Zn2" userLabel="Campos Stack View">
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8a0-O5-a2D"/>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xts-Y1-cDx">
                                         <gestureRecognizers/>
                                         <constraints>
@@ -141,6 +142,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="8a0-O5-a2D" id="zDU-o9-k2f"/>
+                        <outlet property="photoImageView" destination="xts-Y1-cDx" id="ueS-GQ-wzn"/>
                         <outlet property="txtEndereco" destination="Bpg-Cr-Szk" id="VFD-96-zMt"/>
                         <outlet property="txtFone" destination="wn0-3D-Jdn" id="NVp-1V-LDO"/>
                         <outlet property="txtNome" destination="1du-Ys-dS9" id="y8w-FU-jhl"/>
