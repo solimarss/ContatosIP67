@@ -24,6 +24,29 @@ class ContactsListVC: UIViewController {
         let save = NSLocalizedString("save", comment: "comentario")
         print(save)
         
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(actionSheet(gesture:)))
+        tableview.addGestureRecognizer(longPress)
+        
+        
+        
+    }
+    
+    func actionSheet(gesture: UIGestureRecognizer){
+        
+        guard gesture.state == .began else {
+            return
+        }
+        
+        let point = gesture.location(in: tableview)
+        
+        guard let indexPath = tableview.indexPathForRow(at: point) else {
+            return
+        }
+        
+        let contact = dao.findBy(position: indexPath.row)
+        
+        ActionManager(presentIn: self).showActions(of: contact)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
