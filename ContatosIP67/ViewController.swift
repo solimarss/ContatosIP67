@@ -65,6 +65,20 @@ class ViewController: UIViewController {
         
     }
     
+    //acao para o "Tap Gesture Recognizer" que foi colocado graficamente em cima do UIImageView
+    @IBAction func choosePhoto(_ sender: UITapGestureRecognizer) {
+        
+        let imageController = UIImagePickerController()
+        imageController.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            
+        }else{
+            imageController.sourceType = .photoLibrary
+        }
+    
+        present(imageController, animated: true, completion: nil)
+    }
     
     
 }

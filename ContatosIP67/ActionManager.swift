@@ -74,10 +74,16 @@ class ActionManager {
     }
     
     private func maps (address: String){
-        
+        /** abre o mapa no browser
         guard let url = "http://maps.google.com/maps?q=\(address)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else{
             return
         }
+        **/
+        
+        guard let url = "maps://?q=\(address)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else{
+            return
+        }
+
         
         openApp(by: url)
         
