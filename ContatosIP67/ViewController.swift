@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -17,9 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtSite: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var txtLatitude: UITextField!
+    @IBOutlet weak var txtLongitude: UITextField!
     
     var contact: Contact?
     var delegate: CreateOrUpdateContactDelegate?
+    @IBOutlet weak var loadingFindCoordinates: UIActivityIndicatorView!
     
     let dao = ContactDAO.shared
     var isNew = true
@@ -40,6 +44,8 @@ class ViewController: UIViewController {
         txtSite.text = contact.site
         txtFone.text = contact.phone
         photoImageView.image = contact.photo
+        txtLatitude.text = contact.latitude?.description
+        txtLongitude.text = contact.longitude?.description
     }
     
     private func fillContact(){
@@ -49,6 +55,12 @@ class ViewController: UIViewController {
         contact?.site = txtSite.text!
         if let photo = photoImageView.image {
             contact?.photo = photo
+        }
+        if let latitude = Double(self.txtLatitude.text!) {
+            contact?.latitude = latitude
+        }
+        if let longitude = Double(self.txtLongitude.text!) {
+            contact?.longitude = longitude
         }
     
     }
@@ -73,6 +85,43 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func findCoordinates(_ sender: UIButton) {
+        
+        sender.isHidden = true
+        self.loadingFindCoordinates.startAnimating()
+        
+        
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(self.txtEndereco.text!) { (result, error) in
+            
+            defer {
+                sender.isHidden = false
+                self.loadingFindCoordinates.stopAnimating()
+            }
+            
+            guard error == nil else{ return }
+            
+            guard let places = result else{  return  }
+            
+            guard places.count > 0 else{ return }
+
+            let placemark = places[0]
+            
+            guard let location = placemark.location else {return}
+            
+            let coordenada = location.coordinate
+            
+            self.txtLatitude.text = coordenada.latitude.description
+            self.txtLongitude.text = coordenada.longitude.description
+            
+            
+        
+        }
+        
+    }
+
     //acao para o "Tap Gesture Recognizer" que foi colocado graficamente em cima do UIImageView
     @IBAction func choosePhoto(_ sender: UITapGestureRecognizer) {
         

@@ -148,7 +148,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HBY-6A-EAP" userLabel="Coordinates">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HBY-6A-EAP" userLabel="Coordinates">
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R9c-6f-PDi" userLabel="LatitudeLongitude">
                                                 <subviews>
@@ -157,7 +157,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="klg-zV-0oX">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="klg-zV-0oX">
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -167,15 +167,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghY-Ya-7XU">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghY-Ya-7XU">
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-DB-5yl"/>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-qa-8Lf">
                                                 <state key="normal" image="gps"/>
+                                                <connections>
+                                                    <action selector="findCoordinates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sx-tQ-RuW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -199,9 +203,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="8a0-O5-a2D" id="zDU-o9-k2f"/>
+                        <outlet property="loadingFindCoordinates" destination="wCa-DB-5yl" id="Hbq-zQ-Zjs"/>
                         <outlet property="photoImageView" destination="xts-Y1-cDx" id="ueS-GQ-wzn"/>
                         <outlet property="txtEndereco" destination="Bpg-Cr-Szk" id="VFD-96-zMt"/>
                         <outlet property="txtFone" destination="wn0-3D-Jdn" id="NVp-1V-LDO"/>
+                        <outlet property="txtLatitude" destination="klg-zV-0oX" id="v8S-oI-Djh"/>
+                        <outlet property="txtLongitude" destination="ghY-Ya-7XU" id="5JT-T2-yji"/>
                         <outlet property="txtNome" destination="1du-Ys-dS9" id="y8w-FU-jhl"/>
                         <outlet property="txtSite" destination="rbK-XE-m3O" id="QcN-TO-btB"/>
                     </connections>

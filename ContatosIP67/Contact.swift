@@ -15,6 +15,8 @@ class Contact: CustomStringConvertible {
     var phone: String!
     var site: String!
     var photo: UIImage!
+    var latitude: Double!
+    var longitude: Double!
     
     var description: String {
         return "(name: \(name!), address: \(address!), phone: \(phone!), site: \(site!)) "
