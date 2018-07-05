@@ -23,6 +23,7 @@
 		854FFDA320EBF1D500F4E30C /* CreateOrUpdateContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854FFDA220EBF1D500F4E30C /* CreateOrUpdateContactDelegate.swift */; };
 		854FFDA820EC0C7900F4E30C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 854FFDAA20EC0C7900F4E30C /* Localizable.strings */; };
 		854FFDAF20EC18C400F4E30C /* String+Lacalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */; };
+		857388A520EE435A00C0C8F0 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 857388A420EE435A00C0C8F0 /* Vila Mariana.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,7 @@
 		854FFDA920EC0C7900F4E30C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		854FFDAB20EC0C7D00F4E30C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lacalized.swift"; sourceTree = "<group>"; };
-		857388A320EE42BB00C0C8F0 /* GpxVilaMariana.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GpxVilaMariana.gpx; sourceTree = "<group>"; };
+		857388A420EE435A00C0C8F0 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Vila Mariana.gpx"; path = "../../../Caelum/67/Vila Mariana.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 				8538F1DE20ECFB6A00932858 /* ActionManager.swift */,
 				8538F1E020ED49DE00932858 /* CustomTableViewCell.swift */,
 				8538F1E220ED60F300932858 /* MapsVC.swift */,
+				857388A420EE435A00C0C8F0 /* Vila Mariana.gpx */,
 				850DB05120EA5F8F000CAB32 /* Main.storyboard */,
 				850DB05720EA5F8F000CAB32 /* Assets.xcassets */,
 				850DB05920EA5F8F000CAB32 /* LaunchScreen.storyboard */,
@@ -98,7 +100,6 @@
 				854FFDAA20EC0C7900F4E30C /* Localizable.strings */,
 				854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */,
 				8538F1DC20ECF08300932858 /* InfoPlist.strings */,
-				857388A320EE42BB00C0C8F0 /* GpxVilaMariana.gpx */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -165,6 +166,7 @@
 			files = (
 				854FFDA820EC0C7900F4E30C /* Localizable.strings in Resources */,
 				850DB05B20EA5F8F000CAB32 /* LaunchScreen.storyboard in Resources */,
+				857388A520EE435A00C0C8F0 /* Vila Mariana.gpx in Resources */,
 				850DB05820EA5F8F000CAB32 /* Assets.xcassets in Resources */,
 				850DB05320EA5F8F000CAB32 /* Main.storyboard in Resources */,
 				8538F1DA20ECF08300932858 /* InfoPlist.strings in Resources */,
