@@ -7,26 +7,51 @@
 //
 
 import UIKit
+import MapKit
+import CoreData
 
-class Contact: CustomStringConvertible {
+class Contact: NSManagedObject, MKAnnotation {
     
-    var name: String!
-    var address: String!
-    var phone: String!
-    var site: String!
-    var photo: UIImage!
-    var latitude: Double!
-    var longitude: Double!
+    //@NSManaged anotacao do CoreData um ORM para persistencia em banco de dados
+    @NSManaged var name: String!
+    @NSManaged var address: String!
+    @NSManaged var phone: String!
+    @NSManaged var site: String!
+    @NSManaged var photo: UIImage!
+    @NSManaged var latitude: NSNumber!
+    @NSManaged var longitude: NSNumber!
     
-    var description: String {
+    var coordinate: CLLocationCoordinate2D {
+        
+        if latitude == nil || longitude == nil {
+            return kCLLocationCoordinate2DInvalid
+        }
+        
+        return CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+    }
+    
+    var title: String? {
+        return name
+    }
+    
+    var subtitle: String? {
+        return phone
+    }
+    
+  
+    
+    override var description: String {
         return "(name: \(name!), address: \(address!), phone: \(phone!), site: \(site!)) "
     }
-}
-
-extension Contact: Equatable {
     
     static func == (lhs: Contact, rhs: Contact) -> Bool {
         return lhs.name == rhs.name
-        
     }
+    
+    
+
 }
+
+
+    
+

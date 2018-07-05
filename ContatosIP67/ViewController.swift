@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             fillForm(with: contact)
             isNew = false
         }else{
-            contact = Contact()
+            contact = dao.newContac()
         }
     }
     
@@ -57,10 +57,10 @@ class ViewController: UIViewController {
             contact?.photo = photo
         }
         if let latitude = Double(self.txtLatitude.text!) {
-            contact?.latitude = latitude
+            contact?.latitude = NSNumber(value: latitude)
         }
         if let longitude = Double(self.txtLongitude.text!) {
-            contact?.longitude = longitude
+            contact?.longitude = NSNumber(value: longitude)
         }
     
     }
@@ -79,6 +79,7 @@ class ViewController: UIViewController {
             dao.add(newContact: contact!)
             delegate?.created(contact: contact!)
         }else{
+            dao.update(contact: contact!)
             delegate?.updated(contact: contact!)
         }
         _ = navigationController?.popViewController(animated: true)// _ = ignora o retorno
@@ -115,6 +116,10 @@ class ViewController: UIViewController {
             
             self.txtLatitude.text = coordenada.latitude.description
             self.txtLongitude.text = coordenada.longitude.description
+            
+            print("coordinates: ")
+            print(coordenada.latitude.description)
+            print(coordenada.longitude.description)
             
             
         
