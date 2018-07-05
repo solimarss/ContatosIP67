@@ -76,11 +76,20 @@ extension ContactsListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "cell_ID", for: indexPath)
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: "cell_ID", for: indexPath) as? CustomTableViewCell
+        else {
+            fatalError("Can't cast to CustomTableViewCell")
+        }
+        
+        //cell.profileImageView.frame.height = 80
+        //cell.profileImageView.frame.width = 80
         
         let contact = dao.findBy(position: indexPath.row)
         print("position: \(indexPath.row)")
-        cell.textLabel?.text = "Nome: \(contact.name!)"
+        cell.nameLabel?.text = contact.name
+        cell.profileImageView?.image = contact.photo
+        
+        
         return cell
     }
     
@@ -127,6 +136,10 @@ extension ContactsListVC: UITableViewDelegate {
            navigationController?.pushViewController(form, animated: true)
         }
        **/
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
     }
     
 }

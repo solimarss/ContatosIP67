@@ -14,8 +14,17 @@ class Contact: CustomStringConvertible {
     var address: String!
     var phone: String!
     var site: String!
+    var photo: UIImage!
     
     var description: String {
         return "(name: \(name!), address: \(address!), phone: \(phone!), site: \(site!)) "
+    }
+}
+
+extension Contact: Equatable {
+    
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.name == rhs.name
+        
     }
 }

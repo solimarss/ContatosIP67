@@ -39,13 +39,19 @@ class ViewController: UIViewController {
         txtEndereco.text = contact.address
         txtSite.text = contact.site
         txtFone.text = contact.phone
+        photoImageView.image = contact.photo
     }
     
     private func fillContact(){
         contact?.name = txtNome.text!
         contact?.phone = txtFone.text!
         contact?.address = txtEndereco.text!
-        contact?.site = txtSite.text!    }
+        contact?.site = txtSite.text!
+        if let photo = photoImageView.image {
+            contact?.photo = photo
+        }
+    
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,21 +80,48 @@ class ViewController: UIViewController {
         //para imperdir que seja clicado mais de uma vez
         photoImageView.isUserInteractionEnabled = false
         
-        let imageController = UIImagePickerController()
-        imageController.allowsEditing = true
-        imageController.delegate = self
+       
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             
+            let alert = UIAlertController(title: "Choose Source", message: nil, preferredStyle: .actionSheet)
+            
+            let camera = UIAlertAction(title: "Take Photo", style: .default, handler: { (action) in
+                self.showImage(from: .camera)
+            })
+            
+            let library = UIAlertAction(title: "Photo library", style: .default, handler: { (action) in
+                self.showImage(from: .photoLibrary)
+            })
+
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                self.stopImageLoader()
+            })
+            
+            alert.addAction(camera)
+            alert.addAction(library)
+            alert.addAction(cancel)
+            
         }else{
-            imageController.sourceType = .photoLibrary
+            showImage(from: .photoLibrary)
         }
     
         
-        present(imageController, animated: true, completion: nil)
+       
     }
     
+    private func showImage(from source: UIImagePickerControllerSourceType){
+        
+        let imageController = UIImagePickerController()
+        imageController.allowsEditing = true
+        imageController.delegate = self
+        imageController.sourceType = source
+        
+        present(imageController, animated: true, completion: nil)
+    }
 }
+
+
 
 extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
