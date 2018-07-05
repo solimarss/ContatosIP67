@@ -16,17 +16,17 @@
                         <viewControllerLayoutGuide type="bottom" id="5RJ-IP-ZNj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x2e-E3-5l2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WcB-Nn-SZj">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell_ID" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_ID" rowHeight="106" id="nOV-db-cB7" customClass="CustomTableViewCell" customModule="ContatosIP67" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="106"/>
+                                        <rect key="frame" x="0.0" y="92" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nOV-db-cB7" id="ubA-zw-csZ">
-                                            <frame key="frameInset" width="320" height="105"/>
+                                            <frame key="frameInset" width="414" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ks2-H9-VJp">
@@ -93,7 +93,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJ4-ze-Zn2" userLabel="Campos Stack View">
@@ -193,17 +193,17 @@
                         <viewControllerLayoutGuide type="bottom" id="VQX-nR-54H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GtU-Bn-tZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="464-eW-Shc"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="464-eW-Shc" firstAttribute="top" secondItem="2Bj-fc-pgy" secondAttribute="bottom" id="TtX-lb-WUL"/>
-                            <constraint firstItem="VQX-nR-54H" firstAttribute="top" secondItem="464-eW-Shc" secondAttribute="bottom" id="bTK-tu-2es"/>
-                            <constraint firstItem="464-eW-Shc" firstAttribute="leading" secondItem="GtU-Bn-tZJ" secondAttribute="leadingMargin" id="jkP-kL-wkh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="464-eW-Shc" secondAttribute="trailing" id="ldV-mW-e32"/>
+                            <constraint firstItem="464-eW-Shc" firstAttribute="leading" secondItem="GtU-Bn-tZJ" secondAttribute="leading" id="76a-WQ-wBm"/>
+                            <constraint firstAttribute="trailing" secondItem="464-eW-Shc" secondAttribute="trailing" id="E9F-Zt-1Y6"/>
+                            <constraint firstAttribute="bottom" secondItem="464-eW-Shc" secondAttribute="bottom" id="QVI-KI-v60"/>
+                            <constraint firstItem="464-eW-Shc" firstAttribute="top" secondItem="2Bj-fc-pgy" secondAttribute="bottom" id="xLY-Vg-WBD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Maps" id="cvR-dr-VdJ"/>

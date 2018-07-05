@@ -139,7 +139,7 @@ extension ContactsListVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 96.0
     }
     
 }

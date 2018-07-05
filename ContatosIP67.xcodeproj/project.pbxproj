@@ -48,6 +48,7 @@
 		854FFDA920EC0C7900F4E30C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		854FFDAB20EC0C7D00F4E30C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lacalized.swift"; sourceTree = "<group>"; };
+		857388A320EE42BB00C0C8F0 /* GpxVilaMariana.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GpxVilaMariana.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 				854FFDAA20EC0C7900F4E30C /* Localizable.strings */,
 				854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */,
 				8538F1DC20ECF08300932858 /* InfoPlist.strings */,
+				857388A320EE42BB00C0C8F0 /* GpxVilaMariana.gpx */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
