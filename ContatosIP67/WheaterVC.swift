@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 
 class WheaterVC: UIViewController {
 
@@ -28,12 +29,24 @@ class WheaterVC: UIViewController {
             "units": "metric"
         ]
         
+        //Alamofire.request(base_api_url, parameters: param).responseArray { (response: DataResponse<[Weather]>) in
         
-        Alamofire.request(base_api_url, parameters: param).responseString { (response) in
+        //}
         
-            print(response.value ?? "SEM RESPOSTA")
+        Alamofire.request(base_api_url, parameters: param).responseObject { (response: DataResponse<Weather>) in
+         
+            guard let weather = response.value else {
+                return
+            }
+            
+            self.mainLabel.text = weather.main
+            self.minLabel.text = weather.temperature.min.description + "º" //alt+0
+            self.maxLabel.text = weather.temperature.max.description + "º" //alt+0
+            
+            
+            
+            
         }
-        
         
     }
 

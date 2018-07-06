@@ -26,6 +26,7 @@
 		857388A520EE435A00C0C8F0 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 857388A420EE435A00C0C8F0 /* Vila Mariana.gpx */; };
 		857388A720EEA3DC00C0C8F0 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857388A620EEA3DC00C0C8F0 /* CoreDataUtil.swift */; };
 		8597F5A020EF995C00B0577C /* WheaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F59F20EF995C00B0577C /* WheaterVC.swift */; };
+		8597F5A220EFA70600B0577C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F5A120EFA70600B0577C /* Weather.swift */; };
 		93860151DA23A9FA7976C6B7 /* Pods_ContatosIP67.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489122ED51D5DA7351BEC65E /* Pods_ContatosIP67.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		857388A420EE435A00C0C8F0 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Vila Mariana.gpx"; path = "../../../Caelum/67/Vila Mariana.gpx"; sourceTree = "<group>"; };
 		857388A620EEA3DC00C0C8F0 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
 		8597F59F20EF995C00B0577C /* WheaterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheaterVC.swift; sourceTree = "<group>"; };
+		8597F5A120EFA70600B0577C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				857388A620EEA3DC00C0C8F0 /* CoreDataUtil.swift */,
 				8521CD2A20EAA75A0006601E /* ContactsListVC.swift */,
 				8538F1E220ED60F300932858 /* MapsVC.swift */,
+				8597F59F20EF995C00B0577C /* WheaterVC.swift */,
 				854FFDA220EBF1D500F4E30C /* CreateOrUpdateContactDelegate.swift */,
 				8538F1DE20ECFB6A00932858 /* ActionManager.swift */,
 				8538F1E020ED49DE00932858 /* CustomTableViewCell.swift */,
@@ -112,7 +115,7 @@
 				854FFDAA20EC0C7900F4E30C /* Localizable.strings */,
 				854FFDAE20EC18C400F4E30C /* String+Lacalized.swift */,
 				8538F1DC20ECF08300932858 /* InfoPlist.strings */,
-				8597F59F20EF995C00B0577C /* WheaterVC.swift */,
+				8597F5A120EFA70600B0577C /* Weather.swift */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				854FFDAF20EC18C400F4E30C /* String+Lacalized.swift in Sources */,
 				850DB04E20EA5F8F000CAB32 /* AppDelegate.swift in Sources */,
 				8538F1E120ED49DE00932858 /* CustomTableViewCell.swift in Sources */,
+				8597F5A220EFA70600B0577C /* Weather.swift in Sources */,
 				854FFDA320EBF1D500F4E30C /* CreateOrUpdateContactDelegate.swift in Sources */,
 				8521CD2B20EAA75A0006601E /* ContactsListVC.swift in Sources */,
 				857388A720EEA3DC00C0C8F0 /* CoreDataUtil.swift in Sources */,
