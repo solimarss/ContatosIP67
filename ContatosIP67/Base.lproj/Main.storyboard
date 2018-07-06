@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E7S-h5-N0Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C3l-sA-fvk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -78,6 +78,7 @@
                     <connections>
                         <outlet property="tableview" destination="WcB-Nn-SZj" id="MWW-3K-CDp"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toUpdate" id="Rp2-d7-wTn"/>
+                        <segue destination="E7S-h5-N0Y" kind="show" identifier="weatherSegueID" id="Rbs-aH-XUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn5-5a-cVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,7 +226,7 @@
         <!--WeatherVC-->
         <scene sceneID="JG1-b0-sEk">
             <objects>
-                <viewController storyboardIdentifier="wheaterVcID" id="E7S-h5-N0Y" customClass="WeatherVC" customModule="ContatosIP67" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="weatherID" id="E7S-h5-N0Y" customClass="WeatherVC" customModule="ContatosIP67" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fbz-NU-Lm6"/>
                         <viewControllerLayoutGuide type="bottom" id="LOD-sU-8UF"/>
@@ -236,15 +237,7 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Ay-vYI">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Condicao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73X-zO-2ea">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="mre-Rb-cjb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Valor condicao atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-4g-YMg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Condicao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-4g-YMg">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="sPS-qL-pii"/>
                                         </constraints>
@@ -252,7 +245,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fob-ym-LUz">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="753" text="valor condicao atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73X-zO-2ea">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="mre-Rb-cjb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fob-ym-LUz">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="mcq-fT-vHo"/>
                                         </constraints>
@@ -298,7 +299,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2oG-Ay-vYI" secondAttribute="trailing" constant="15" id="KC4-a2-mDP"/>
                             <constraint firstItem="2oG-Ay-vYI" firstAttribute="leading" secondItem="qu3-Fe-dH6" secondAttribute="leading" constant="15" id="rMj-Y2-J1g"/>
-                            <constraint firstItem="2oG-Ay-vYI" firstAttribute="top" secondItem="fbz-NU-Lm6" secondAttribute="bottom" constant="15" id="vnS-AF-XOH"/>
+                            <constraint firstItem="2oG-Ay-vYI" firstAttribute="top" secondItem="fbz-NU-Lm6" secondAttribute="bottom" constant="30" id="vnS-AF-XOH"/>
                         </constraints>
                     </view>
                     <connections>

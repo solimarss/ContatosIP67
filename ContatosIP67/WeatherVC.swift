@@ -27,6 +27,8 @@ class WeatherVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Weather"
+        
         mainLabel.isHidden = true
         minLabel.isHidden = true
         maxLabel.isHidden = true

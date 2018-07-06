@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 
 class ActionManager {
@@ -32,21 +33,43 @@ class ActionManager {
             self.maps(address: contact.address)
         }
         let weather = UIAlertAction(title: "Show Weather", style: .default) { action in
-            self.navigationToWeatherView(wirh: contact)
+            self.navigationToWeatherView(with: contact)
         }
         
         alert.addAction(cancel)
         alert.addAction(call)
         alert.addAction(browser)
         alert.addAction(maps)
-        alert.addAction(weather)
+        
+        if CLLocationCoordinate2DIsValid(contact.coordinate)   {
+            alert.addAction(weather)
+        }
+        
+        
         
         controller.present(alert, animated: true, completion: nil)
 
     }
     
     
-    private func navigationToWeatherView(wirh contatc: Contact){
+    private func navigationToWeatherView(with contact: Contact){
+        /** Navegacao usando navigationController
+        guard let viewController =   controller.storyboard?.instantiateViewController(withIdentifier: "weatherID") else {
+            return
+        }
+        
+        guard let weatherController = viewController as? WeatherVC else {
+             return
+        }
+        
+        weatherController.contact = contact
+        
+        controller.navigationController?.pushViewController(weatherController, animated: true)
+        
+ **/
+        //Navegacao via segue
+            controller.performSegue(withIdentifier: "weatherSegueID", sender: contact)
+        
         
         
     }

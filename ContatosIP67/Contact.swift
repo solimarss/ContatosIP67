@@ -23,7 +23,7 @@ class Contact: NSManagedObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D {
         
-        if latitude == nil || longitude == nil {
+        if latitude == 0 || longitude == 0 {
             return kCLLocationCoordinate2DInvalid
         }
         

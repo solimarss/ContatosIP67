@@ -147,23 +147,31 @@ extension ContactsListVC: UITableViewDelegate {
 extension ContactsListVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-         let form = segue.destination as? ViewController
-                 form?.delegate = self
         
-        if segue.identifier == "toUpdate"
-        {
-         
-          let contact = sender as? Contact
-          form?.contact = contact
+        if segue.identifier == "weatherSegueID" {
+            let weather = segue.destination as? WeatherVC
+            let contact = sender as? Contact
+            weather?.contact = contact
+            
+        }else{
+            
+            let form = segue.destination as? ViewController
+            form?.delegate = self
+            
+            if segue.identifier == "toUpdate"
+            {
+                let contact = sender as? Contact
+                form?.contact = contact
+            }
+            
+            if segue.identifier == "toInsert"
+            {
+                print("toInsert")
+                
+            }
+            
+        }
 
-            
-        }
-        
-        if segue.identifier == "toInsert"
-        {
-           print("toInsert")
-            
-        }
     }
     
    
