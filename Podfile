@@ -6,6 +6,8 @@ target 'ContatosIP67' do
   use_frameworks!
 
   # Pods for ContatosIP67
-  pod 'IQKeyboardManagerSwift', '5.0.0'
+  pod 'IQKeyboardManagerSwift', '4.0.8'
+  pod 'AlamofireImage', '~> 3.3'
+  pod 'AlamofireObjectMapper', '~> 4.1.0’
 
 end
