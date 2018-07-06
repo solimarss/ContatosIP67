@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nOV-db-cB7" id="ubA-zw-csZ">
-                                            <frame key="frameInset" width="375" height="106"/>
+                                            <frame key="frameInset" width="375" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ks2-H9-VJp">
@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="2126.25" y="142.6056338028169"/>
         </scene>
-        <!--WheaterVC-->
+        <!--WeatherVC-->
         <scene sceneID="JG1-b0-sEk">
             <objects>
-                <viewController storyboardIdentifier="wheaterVcID" id="E7S-h5-N0Y" customClass="WheaterVC" customModule="ContatosIP67" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wheaterVcID" id="E7S-h5-N0Y" customClass="WeatherVC" customModule="ContatosIP67" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fbz-NU-Lm6"/>
                         <viewControllerLayoutGuide type="bottom" id="LOD-sU-8UF"/>
@@ -237,19 +237,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Ay-vYI">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Condicao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73X-zO-2ea">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="mre-Rb-cjb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Valor condicao atual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3f-4g-YMg">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="sPS-qL-pii"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fob-ym-LUz"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fob-ym-LUz">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="mcq-fT-vHo"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-7G-KkY" userLabel="maxima">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mT-GD-jXQ">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Qsq-Vi-XFQ"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -269,6 +282,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="valor temperatura minima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoM-TQ-ZlS">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="aH2-bf-Drm"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -280,7 +296,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LOD-sU-8UF" firstAttribute="top" secondItem="2oG-Ay-vYI" secondAttribute="bottom" constant="365" id="2XO-Gs-k1I"/>
                             <constraint firstAttribute="trailing" secondItem="2oG-Ay-vYI" secondAttribute="trailing" constant="15" id="KC4-a2-mDP"/>
                             <constraint firstItem="2oG-Ay-vYI" firstAttribute="leading" secondItem="qu3-Fe-dH6" secondAttribute="leading" constant="15" id="rMj-Y2-J1g"/>
                             <constraint firstItem="2oG-Ay-vYI" firstAttribute="top" secondItem="fbz-NU-Lm6" secondAttribute="bottom" constant="15" id="vnS-AF-XOH"/>
@@ -295,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUd-01-b7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080.8000000000002" y="142.57871064467767"/>
+            <point key="canvasLocation" x="3206" y="98"/>
         </scene>
         <!--Maps-->
         <scene sceneID="Lq0-3i-fP6">
