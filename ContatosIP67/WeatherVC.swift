@@ -19,10 +19,9 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var minLabel: UILabel!
     
     var contact: Contact!
+    let api = Api()
     
     
-    let base_api_url = "http://api.openweathermap.org/data/2.5/weather"
-    let base_icon_url = "http://openweathermap.org/img/w/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,25 +34,21 @@ class WeatherVC: UIViewController {
         
         
 
-        let param = [
-            "lat": contact.latitude.description,
-            "lon": contact.longitude.description,
-            "appid": "e53f5c17b63077c24d8bd1906748394a",
-            "units": "metric"
+        
+        
+        
+        api.getWeather(by: contact) { (weather, url ,error) in
             
-        ]
-        
-        //"lang": "pt"
-        
-        //Alamofire.request(base_api_url, parameters: param).responseArray { (response: DataResponse<[Weather]>) in
-        
-        //}
-        
-        Alamofire.request(base_api_url, parameters: param).responseObject { (response: DataResponse<Weather>) in
-         
-            guard let weather = response.value else {
+            guard error == nil else {
+                self.navigationController?.popViewController(animated: true)
                 return
             }
+            
+            guard let weather = weather else {
+                self.navigationController?.popViewController(animated: true)
+                return
+            }
+            
             
             self.mainLabel.text = weather.main
             self.minLabel.text = weather.temperature.min.description + " º" //alt+0
@@ -61,7 +56,7 @@ class WeatherVC: UIViewController {
             
             
             
-            if let url = URL(string: self.base_icon_url + weather.icon + ".png"){
+            if let url = url {
                 self.mainImageView.af_setImage(withURL: url)
             }
             
@@ -69,10 +64,15 @@ class WeatherVC: UIViewController {
             self.mainLabel.isHidden = false
             self.minLabel.isHidden = false
             self.maxLabel.isHidden = false
-
             
             
         }
+            
+        
+
+            
+            
+      
         
     }
 

@@ -28,6 +28,7 @@
 		8597F5A020EF995C00B0577C /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F59F20EF995C00B0577C /* WeatherVC.swift */; };
 		8597F5A220EFA70600B0577C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F5A120EFA70600B0577C /* Weather.swift */; };
 		8597F5A420EFBF8F00B0577C /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F5A320EFBF8F00B0577C /* CLLocationCoordinate2D+Equatable.swift */; };
+		8597F5A620EFC94300B0577C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597F5A520EFC94300B0577C /* Api.swift */; };
 		93860151DA23A9FA7976C6B7 /* Pods_ContatosIP67.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489122ED51D5DA7351BEC65E /* Pods_ContatosIP67.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		8597F59F20EF995C00B0577C /* WeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		8597F5A120EFA70600B0577C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		8597F5A320EFBF8F00B0577C /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
+		8597F5A520EFC94300B0577C /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				857388A620EEA3DC00C0C8F0 /* CoreDataUtil.swift */,
 				8521CD2A20EAA75A0006601E /* ContactsListVC.swift */,
 				8538F1E220ED60F300932858 /* MapsVC.swift */,
-				8597F59F20EF995C00B0577C /* WeatherVC.swift */,
 				8597F5A120EFA70600B0577C /* Weather.swift */,
+				8597F59F20EF995C00B0577C /* WeatherVC.swift */,
+				8597F5A520EFC94300B0577C /* Api.swift */,
 				854FFDA220EBF1D500F4E30C /* CreateOrUpdateContactDelegate.swift */,
 				8538F1DE20ECFB6A00932858 /* ActionManager.swift */,
 				8538F1E020ED49DE00932858 /* CustomTableViewCell.swift */,
@@ -295,6 +298,7 @@
 				8521CD2B20EAA75A0006601E /* ContactsListVC.swift in Sources */,
 				857388A720EEA3DC00C0C8F0 /* CoreDataUtil.swift in Sources */,
 				8538F1DF20ECFB6A00932858 /* ActionManager.swift in Sources */,
+				8597F5A620EFC94300B0577C /* Api.swift in Sources */,
 				8597F5A020EF995C00B0577C /* WeatherVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
