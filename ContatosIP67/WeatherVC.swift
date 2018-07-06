@@ -18,6 +18,9 @@ class WeatherVC: UIViewController {
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var minLabel: UILabel!
     
+    var contact: Contact!
+    
+    
     let base_api_url = "http://api.openweathermap.org/data/2.5/weather"
     let base_icon_url = "http://openweathermap.org/img/w/"
     
@@ -31,11 +34,14 @@ class WeatherVC: UIViewController {
         
 
         let param = [
-            "lat": "-23.588453",
-            "lon": "-46.632103",
+            "lat": contact.latitude.description,
+            "lon": contact.longitude.description,
             "appid": "e53f5c17b63077c24d8bd1906748394a",
             "units": "metric"
+            
         ]
+        
+        //"lang": "pt"
         
         //Alamofire.request(base_api_url, parameters: param).responseArray { (response: DataResponse<[Weather]>) in
         
@@ -51,7 +57,7 @@ class WeatherVC: UIViewController {
             self.minLabel.text = weather.temperature.min.description + " º" //alt+0
             self.maxLabel.text = weather.temperature.max.description + " º" //alt+0
             
-            print("ICON "+weather.icon)
+            
             
             if let url = URL(string: self.base_icon_url + weather.icon + ".png"){
                 self.mainImageView.af_setImage(withURL: url)

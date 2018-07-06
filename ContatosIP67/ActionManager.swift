@@ -31,14 +31,24 @@ class ActionManager {
         let maps = UIAlertAction(title: "Show in Map", style: .default) { action in
             self.maps(address: contact.address)
         }
+        let weather = UIAlertAction(title: "Show Weather", style: .default) { action in
+            self.navigationToWeatherView(wirh: contact)
+        }
         
         alert.addAction(cancel)
         alert.addAction(call)
         alert.addAction(browser)
         alert.addAction(maps)
+        alert.addAction(weather)
         
         controller.present(alert, animated: true, completion: nil)
 
+    }
+    
+    
+    private func navigationToWeatherView(wirh contatc: Contact){
+        
+        
     }
     
     private func openApp(by url: String){

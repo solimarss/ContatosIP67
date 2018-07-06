@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn5-5a-cVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278.75" y="142.6056338028169"/>
+            <point key="canvasLocation" x="-492" y="-511"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="tne-QT-ifu">
@@ -220,7 +220,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2126.25" y="142.6056338028169"/>
+            <point key="canvasLocation" x="804" y="-170"/>
         </scene>
         <!--WeatherVC-->
         <scene sceneID="JG1-b0-sEk">
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUd-01-b7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="98"/>
+            <point key="canvasLocation" x="804" y="-890"/>
         </scene>
         <!--Maps-->
         <scene sceneID="Lq0-3i-fP6">
